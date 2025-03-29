@@ -4,6 +4,9 @@ import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contactsSlice";
 import * as Yup from "yup";
+import { MdOutlinePhoneInTalk } from "react-icons/md";
+import { MdDriveFileRenameOutline } from "react-icons/md";
+import { IoMdPersonAdd } from "react-icons/io";
 
 export default function ContactForm() {
   const dispatch = useDispatch();
@@ -31,7 +34,7 @@ export default function ContactForm() {
       >
         <Form className={css.form}>
           <label htmlFor="name" className={css.formlabel}>
-            Name
+            <MdDriveFileRenameOutline className={css.icon} /> Name
             <Field
               type="text"
               name="name"
@@ -45,7 +48,7 @@ export default function ContactForm() {
             />
           </label>
           <label htmlFor="number" className={css.formlabel}>
-            Number
+            <MdOutlinePhoneInTalk className={css.icon} /> Number
             <Field
               type="text"
               name="number"
@@ -59,6 +62,7 @@ export default function ContactForm() {
             />
           </label>
           <button type="submit" className={css.formButton}>
+            <IoMdPersonAdd className={css.iconContact} />
             Add concat
           </button>
         </Form>

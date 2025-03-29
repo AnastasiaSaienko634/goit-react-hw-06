@@ -1,5 +1,8 @@
 .form {
-  border: 1px solid black;
+  border: 2px solid #d3d3d3; /* Светло-серый бордер */
+  border-radius: 12px; /* Скругление углов */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  background: white; /* Фон для лучшего контраста */
   width: 350px;
   padding: 20px;
   font-size: 20px;
@@ -7,12 +10,15 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
 }
 
 .formlabel {
   padding-bottom: 2px;
   margin-top: 10px;
+  font-size: 22px;
 }
 
 .formInput {
@@ -20,21 +26,34 @@
   height: 25px;
   margin-top: 2px;
   border-radius: 3px;
+  border: 2px solid #d3d3d3; /* Светло-серый бордер */
+  border-radius: 12px; /* Скругление углов */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  background: white; /* Фон для лучшего контраста */
+  outline: none;
+}
+
+.formInput:focus {
+  border-color: rgb(253, 92, 205);
 }
 
 .formButton {
   margin-top: 10px;
-  width: 100px;
+  width: 150px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  padding-bottom: 15px;
   height: 30px;
   border-radius: 5px;
-  font-size: 16px;
-  background-color: rgb(148, 198, 247);
-  border: none;
+  font-size: 20px;
+  border: 1px solid rgb(253, 92, 205);
+  background-color: rgb(255, 58, 196);
+  transition: background-color 1s ease-in-out;
 }
 
 .formButton:hover {
-  background-color: rgb(73, 163, 253);
-  border-color: rgb(41, 140, 240);
+  background-color: rgb(255, 167, 229);
+  border: 1px solid rgb(255, 165, 228);
 }
 
 .schemaName {
@@ -51,4 +70,17 @@
   font-size: 16px;
   margin-top: 5px;
   color: rgb(179, 9, 9);
+}
+
+.iconContact {
+  padding-left: 1px;
+  padding-right: 7px;
+  width: 20px;
+  height: 20px;
+}
+
+.icon {
+  fill: rgb(255, 58, 196);
+  width: 30px;
+  height: 25px;
 }

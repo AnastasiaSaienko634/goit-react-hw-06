@@ -1,5 +1,8 @@
 .boxContact {
-  border: 1px solid black;
+  border: 2px solid #d3d3d3; /* Светло-серый бордер */
+  border-radius: 12px; /* Скругление углов */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  background: white; /* Фон для лучшего контраста */
   width: 350px;
   height: 80px;
   padding: 10px;
@@ -7,7 +10,7 @@
   display: flex; /* Выравнивание элементов в строку */
   justify-content: space-between; /* Разделяет элементы с максимальным расстоянием */
   align-items: center;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 
 .contactInfo {
@@ -21,4 +24,8 @@
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
 }
