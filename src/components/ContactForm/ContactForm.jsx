@@ -1,10 +1,22 @@
 import css from "./ContactForm.module.css";
 import { Field, Formik, Form, ErrorMessage } from "formik";
-import { useId } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { useDispatch } from "react-redux";
+import { addContact } from "../../redux/contactsSlice";
 import * as Yup from "yup";
 
-export default function ContactForm({ handelContactFrom }) {
-  const id = useId();
+export default function ContactForm() {
+  const dispatch = useDispatch();
+
+  const handleContactForm = (values, actions) => {
+    dispatch(
+      addContact({
+        id: uuidv4(),
+        name: values.name,
+        number: values.number,
+      })
+    );
+  };
 
   const contactSchema = Yup.object().shape({
     name: Yup.string().min(3, "Too Short").max(50, "Too Long").required(),
@@ -15,24 +27,29 @@ export default function ContactForm({ handelContactFrom }) {
       <Formik
         validationSchema={contactSchema}
         initialValues={{ name: "", number: "" }}
-        onSubmit={handelContactFrom}
+        onSubmit={handleContactForm}
       >
         <Form className={css.form}>
-          <label htmlFor={id} className={css.formlabel}>
+          <label htmlFor="name" className={css.formlabel}>
             Name
-            <Field type="text" name="name" id={id} className={css.formInput} />
+            <Field
+              type="text"
+              name="name"
+              id="name"
+              className={css.formInput}
+            />
             <ErrorMessage
               name="name"
               component="span"
               className={css.schemaName}
             />
           </label>
-          <label htmlFor={id} className={css.formlabel}>
+          <label htmlFor="number" className={css.formlabel}>
             Number
             <Field
               type="text"
               name="number"
-              id={id}
+              id="number"
               className={css.formInput}
             />
             <ErrorMessage
