@@ -19,6 +19,7 @@ export default function ContactForm() {
         number: values.number,
       })
     );
+    actions.resetForm(); //очищає форму після відправки
   };
 
   const contactSchema = Yup.object().shape({
